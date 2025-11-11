@@ -17,6 +17,14 @@ class Welcome extends CI_Controller {
 			echo "nama:".$d['nama'].'<p>';
 		}
 
+		// oke gini, inteliphense kadang suka error
+		// dan agak tolol jadi ada kemungkinan harus di refresh berkali kali
+		// dan nambah komentar ini biar keliatan beda
+		// sama welcome.php ini perlu di perhatikan 
+		// laragon setup nya harus bener nambah laragon di path system environment variable
+		// terus di codeigniter nya juga harus bener setingannya
+		// jadi kalo error mending di refresh aja berkali kali
+		// tolol emang si inteliphense ini
 		// nambah dikit harusnya gapapa
 	}
 
