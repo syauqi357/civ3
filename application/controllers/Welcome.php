@@ -9,6 +9,8 @@ class Welcome extends CI_Controller {
 		// Load the database library
 		$this->load->model('mymodel');
 
+		// ini udah bener tapi kok error2 gajelas babi
+
 		//$this->load->view('welcome_message');
 		$data=$this->mymodel->get_data();
 
