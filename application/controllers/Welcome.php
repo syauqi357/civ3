@@ -16,6 +16,8 @@ class Welcome extends CI_Controller {
 			echo "nim:".$d['nim'].'<br>';
 			echo "nama:".$d['nama'].'<p>';
 		}
+
+		// nambah dikit harusnya gapapa
 	}
 
 	// inserting 
