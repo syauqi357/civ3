@@ -6,18 +6,26 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+
+		
+
+		$data=$this->mymodel->get_data();
+
+		// 
+		$this->load->view('data_mhs', array('dt'=>$data));
+		
 		// Load the database library
-		$this->load->model('mymodel');
+		// $this->load->model('mymodel');
 
 		// ini udah bener tapi kok error2 gajelas babi
 
 		//$this->load->view('welcome_message');
-		$data=$this->mymodel->get_data();
+		// $data=$this->mymodel->get_data();
 
-		foreach ($data as $d){
-			echo "nim:".$d['nim'].'<br>';
-			echo "nama:".$d['nama'].'<p>';
-		}
+		// foreach ($data as $d){
+		// 	echo "nim:".$d['nim'].'<br>';
+		// 	echo "nama:".$d['nama'].'<p>';
+		// }
 
 		// oke gini, inteliphense kadang suka error
 		// dan agak tolol jadi ada kemungkinan harus di refresh berkali kali
@@ -82,23 +90,10 @@ class Welcome extends CI_Controller {
 			}
 	}
 
-	public function showedup()
-	{
-	$this->load->view('helo');
-	}
-
-	public function tampil($satu="Nadia", $dua="Ekawati")
-	{
-		echo "Nama saya adalah : ".$satu." ".$dua;
-	}
+	// public function showedup()
 	
-	public function muncul()
-	{
-		echo "Saya mahasiswa Semester 7a";
-	}
 }
-?>	
-
+?>
 
 <!-- git kontolllll -->
 
