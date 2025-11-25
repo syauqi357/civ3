@@ -77,36 +77,54 @@ $res=$this->mymodel->insertdata(
 
 	}
 
+	public function editpage($nim){
+		$data['student'] = $this->mymodel->get_data_by_nim($nim);
+		if(empty($data['student'])){
+			redirect('index.php/welcome');
+		}
+		$this->load->view('edit_mhs', $data);
+	}
+
 	public function updatedata(){
+		$nim=$_POST['nim'];
+		$nama=$_POST['nama'];
+		$agama=$_POST['agama'];
+		$alamat=$_POST['alamat'];
+		$asal_sekolah=$_POST['asal_sekolah'];
+
 		$res=$this->mymodel->updatedata(
 			't_mhs', 
 			array(
-				"nama"=>"nadia", 
-				"agama"=>"islam",
-				"alamat"=>"earth",
-				"asal_sekolah"=>"anywhere"
+				"nama"=>$nama, 
+				"agama"=>$agama,
+				"alamat"=>$alamat,
+				"asal_sekolah"=>$asal_sekolah
 			),
-			array("nim"=>"22121004")
+			array("nim"=>$nim)
 		);
-			if ($res==1){
-				echo "edit sukses";
-			} else {
-				echo "edit gagal";
-			}
+		if ($res==1){
+			echo "<script>alert('Data berhasil diperbarui')</script>";
+			echo "<meta http-equiv='refresh' content='0; url=../../'>";
+		} else {
+			echo "<script>alert('Gagal memperbarui data')</script>";
+			echo "<meta http-equiv='refresh' content='0; url=../../'>";
+		}
 	}
 	
 	// delete
 
-	public function deletedata(){
+	public function deletedata($nim){
 		$res=$this->mymodel->deletedata(
 			't_mhs', 
-			array("nim"=>"2212003")
+			array("nim"=>$nim)
 		);
-			if ($res==1){
-				echo "hapus sukses";
-			} else {
-				echo "hapus gagal";
-			}
+		if ($res==1){
+			echo "<script>alert('Data berhasil dihapus')</script>";
+			echo "<meta http-equiv='refresh' content='0; url=../../'>";
+		} else {
+			echo "<script>alert('Gagal menghapus data')</script>";
+			echo "<meta http-equiv='refresh' content='0; url=../../'>";
+		}
 	}
 
 	// public function showedup()

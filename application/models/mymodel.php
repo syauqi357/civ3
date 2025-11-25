@@ -12,6 +12,14 @@ class mymodel extends CI_Model {
 		return $query->result_array();
 	}
 
+	// get data by nim
+	public function get_data_by_nim($nim)
+	{
+		$query = $this->db->query('select * from t_mhs where nim = ?', array($nim));
+		$result = $query->result_array();
+		return !empty($result) ? $result[0] : null;
+	}
+
 	// inserting the data
 	public function insertdata($table, $data)
 	{
