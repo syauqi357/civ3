@@ -15,7 +15,7 @@
 			</div>
 
 			<!-- Form Card -->
-			<form action="index.php/welcome/insertdata" method="post" name="input_mhs" class="bg-white rounded-md border border-slate-500 p-8 space-y-6">
+			<form action="welcome/insertdata" method="post" name="input_mhs" class="bg-white rounded-md border border-slate-500 p-8 space-y-6">
 				
 				<!-- NIM Input -->
 				<div class="form-group">
