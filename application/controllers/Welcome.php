@@ -12,7 +12,10 @@ class Welcome extends CI_Controller {
 		$data=$this->mymodel->get_data();
 
 		// 
+		$this->load->view('input_mhs');
 		$this->load->view('data_mhs', array('dt'=>$data));
+
+
 		
 		// Load the database library
 		// $this->load->model('mymodel');
@@ -40,21 +43,37 @@ class Welcome extends CI_Controller {
 
 	// inserting 
 	public function insertdata(){
-		$res=$this->mymodel->insertdata(
+
+
+		// input by post method php ssr
+$nim=$_POST['nim'];
+$nama=$_POST['nama'];
+$agama=$_POST['agama'];
+$alamat=$_POST['alamat'];
+$asal_sekolah=$_POST['asal_sekolah'];
+
+
+$res=$this->mymodel->insertdata(
 			't_mhs', array(
-				"nim"=>"2212738247283",
-				"nama"=>"muhammad syauqi husin", 
-				"agama"=>"islam",
-				"alamat"=>"kenep",
-				"asal_sekolah"=>"persis"
+				"nim"=>$nim,
+				"nama"=>$nama, 
+				"agama"=>$agama,
+				"alamat"=>$agama,
+				"asal_sekolah"=>$asal_sekolah
 
 			));
-			if ($res==1){
-				echo "input sukses";
-			} else {
-				echo "input gagal";
-			}
 
+/*
+
+*/		
+
+			if ($res==1){
+				echo "<script>alert('input data sukses')</script>";
+				echo "<meta http-equiv='refresh' content='0; url=../../'>";
+			} else {
+	echo "<script>alert('input data sukses')</script>";
+				echo "<meta http-equiv='refresh' content='0; url=../../'>";
+			}
 
 	}
 
